@@ -1,5 +1,8 @@
-<h1>New Event</h1>
 
-<%= render 'form', event: @event %>
+<div class="col-3 mt-3 mx-auto">
+  <h1>Create event</h1>
 
-<%= link_to 'Back', events_path %>
+  <%= render 'form', event: @event %>
+
+  <%= link_to 'Back', events_path %>
+</div>

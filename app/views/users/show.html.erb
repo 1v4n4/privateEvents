@@ -1,0 +1,11 @@
+<div class="col-3 mx-auto">
+
+  <h3 class="my-3 text-center"><%= current_user.name%>'s events</h3>
+  <% current_user.events.each do |event| %>
+  <div class="border border-info">
+    <h5 class="mt-3 text-center"><%= event.title%></h5>
+    <p class="mt-3 text-center"><%= event.description%></p>
+    <p class="mt-3 text-center"><%= event.date%></p>
+    </div>
+  <% end %>
+</div>

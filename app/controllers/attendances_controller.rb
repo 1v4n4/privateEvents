@@ -1,22 +1,22 @@
 class AttendancesController < ApplicationController
-  def show
-    #@visitors = Attendance.find_by(params[:event_id])
-  end
-  
+  before_action :authenticate_user!, only: [:create]
+
+  def show; end
+
   def create
-    @event =  Event.find(params[:event_id])
+    @event = Event.find(params[:event_id])
     if Attendance.where(attended_id: @event.id, attendee_id: current_user.id).exists?
-      redirect_to root_path, notice: "You already attending"
+      redirect_to root_path, notice: 'You already attending'
       return
     elsif current_user.id == @event.creator_id
       redirect_to root_path, notice: "You can't be an attendee of your own event"
       return
-    end      
+    end
     attendance = Attendance.new(attendee_id: current_user.id, attended_id: @event.id)
     if attendance.save
-      redirect_to root_path, notice: "Welcome!"
+      redirect_to root_path, notice: 'Welcome!'
     else
-      redirect_to root_path, notice: "Something went wrong"
+      redirect_to root_path, notice: 'Something went wrong'
     end
-  end 
+  end
 end

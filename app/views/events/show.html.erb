@@ -22,10 +22,10 @@
    <p> <%= visit.name%> </p>  
     <% end %>
   
-  <% if current_user.id != @event.creator_id%>
+  
     <%= button_to 'Attend', {:controller => "attendances", :action => "create", :event_id => @event.id, :user_id=> current_user} , :method=>:post, class:"my-3" %>
       
-  <% end %>
+  
   <%= link_to 'Edit', edit_event_path(@event) %> |
   <%= link_to 'Back', events_path %>
 </div>

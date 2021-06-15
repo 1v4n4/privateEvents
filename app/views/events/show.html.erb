@@ -1,0 +1,31 @@
+<div class = "col-3 mt-5 mx-auto">
+  <p>
+    <h3 class="my-3"><strong>Title:</strong>
+    <%= @event.title %></h3>
+  </p>
+
+  <p class="my-5">
+    <strong>Description:</strong>
+    <%= @event.description %>
+  </p>
+
+  <p  class="mt-3 mb-5">
+    <strong>Date:</strong>
+    <%= @event.date %>
+  </p>
+  
+  <p class="mt-3">
+    <strong><%= @event.title%>' guests:</strong>
+  </p>
+    
+  <% @event.attendees.each do |visit| %>  
+   <p> <%= visit.name%> </p>  
+    <% end %>
+  
+  
+    <%= button_to 'Attend', {:controller => "attendances", :action => "create", :event_id => @event.id, :user_id=> current_user} , :method=>:post, class:"my-3" %>
+      
+  
+  <%= link_to 'Edit', edit_event_path(@event) %> |
+  <%= link_to 'Back', events_path %>
+</div>

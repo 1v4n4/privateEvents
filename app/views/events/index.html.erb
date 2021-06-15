@@ -1,0 +1,63 @@
+<div class="container mt-3 mx-auto">
+  
+  <h5 class="text-center my-5">Upcoming events</h5>
+  
+    <table>
+      <thead>
+        <tr>
+          <td class="col-1"></td>
+          <th class="col-1">Title</th>
+          <th class="col-3">Description</th>
+          <th class="col-1">Date</th>
+          
+        </tr>
+      </thead>
+      
+      <tbody>
+        <% @upcoming.each do |event| %>
+          <tr>
+            <td class="col-1"></td>
+            <td class="col-2"><%= event.title %></td>
+            <td class="col-4"><%= event.description %></td>
+            <td class="col-1"><%= event.date %></td>
+            <td class="col-1 me-3"></td>
+            <td> <%= button_to 'Attend', {:controller => "attendances", :action => "create", :event_id => event.id, :user_id=> current_user} , :method=>:post %> </td>
+            <td class="col-1 me-3"></td>
+            <td class="col-1"><%= link_to 'Show', event %></td>
+            <td class="col-1"><%= link_to 'Edit', edit_event_path(event) %></td>
+            <td class="col-1"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'No kidding?' } %></td>  
+          </tr>          
+        <% end %>
+      </tbody>
+    </table>
+        
+    <table class='ms-3'>
+      <thead>
+        <tr>
+          <td class="col-1"></td>
+          <th class="col-1">Title</th>
+          <th class="col-3">Description</th>
+          <th class="col-1">Date</th>
+          
+        </tr>
+      </thead>
+        <tbody>
+        <h5 class="text-center my-5">Past events</h5>
+        <% @past.each do |event| %>
+          <tr>
+            <td class="col-1"></td>
+            <td class="col-2"><%= event.title %></td>
+            <td class="col-4"><%= event.description %></td>
+            <td class="col-1"><%= event.date %></td>
+            <td class="col-1"></td>
+            <td class="col-1"><%= link_to 'Show', event %></td>
+            <%# <% if current_user.user_id == event.creator_id %>
+              <td class="col-1"><%= link_to 'Edit', edit_event_path(event) %></td>
+              <td class="col-1"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+           <%# <%end%>              
+                     
+          </tr>          
+        <% end %>
+      </tbody>
+    </table>   
+</div>

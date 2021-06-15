@@ -1,24 +1,31 @@
-# README
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# Microverse Members Only Project
+that allows users to create events and attend other user's upcoming events. Unsigned users can see a list of events only, while deletion and editing are allowed only for the creators of events. Users can't attend events they created. The layout of the website is basic and the focus is on functionality. This project is a part of Odin's Ruby on Rails Curriculum.
 
-Things you may want to cover:
+## Built With
 
-* Ruby version
+- Ruby
+- Rails
+- SQLite3
+- Bootstrap
+- Node.js
+- Yarn
 
-* System dependencies
+## Author
 
-* Configuration
+👤 **Ivana Novaković-Leković** 
 
-* Database creation
+- GitHub: [@githubhandle](https://github.com/1v4n4)
+- Twitter: [@twitterhandle](https://twitter.com/codeIv1)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/1v4n4/)
 
-* Database initialization
 
-* How to run the test suite
+## 🤝 Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Contributions, issues, and feature requests are welcome!
 
-* Deployment instructions
+## Show your support
 
-* ...
+Give a ⭐️ if you like this project!
+

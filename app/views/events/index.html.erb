@@ -25,7 +25,7 @@
             <td class="col-1 me-3"></td>
             <td class="col-1"><%= link_to 'Show', event %></td>
             <td class="col-1"><%= link_to 'Edit', edit_event_path(event) %></td>
-            <td class="col-1"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'No kidding?' } %></td>  
+            <td class="col-1"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'No kidding?' } %></td>  
           </tr>          
         <% end %>
       </tbody>
@@ -49,11 +49,11 @@
             <td class="col-2"><%= event.title %></td>
             <td class="col-4"><%= event.description %></td>
             <td class="col-1"><%= event.date %></td>
-            <td class="col-1"></td>
+            <td class="col-1 me-3"></td>
             <td class="col-1"><%= link_to 'Show', event %></td>
             <%# <% if current_user.user_id == event.creator_id %>
               <td class="col-1"><%= link_to 'Edit', edit_event_path(event) %></td>
-              <td class="col-1"><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+              <td class="col-1"><%= link_to 'Delete', event, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
            <%# <%end%>              
                      
           </tr>          

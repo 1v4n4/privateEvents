@@ -3,11 +3,13 @@
 
     <h3 class="my-3 text-center">Events <%= current_user.name%> created</h3>
     <% current_user.events.each do |event| %>
-      <div class="border border-info">
+      <div class="border border-info pb-4">
         <h5 class="mt-3 text-center"><%= event.title%></h5>
         <p class="mt-3 text-center"><%= event.description%></p>
         <p class="mt-3 text-center"><%= event.date%></p>
-        <p class="text-center"><%= link_to 'Show', event%></p>
+        <%= link_to 'Show', event, class:"ms-5 me-4" %>
+        <%= link_to 'Edit', edit_event_path(event), class:"mx-4" %>
+        <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'No kidding?' }, class:"mx-4" %>        
       </div> 
     <%end%>   
   </div>
@@ -16,24 +18,20 @@
     <h3 class="my-3 text-center">Events <%= current_user.name%> attending</h3>
     <h4 class="my-3 text-center">Next events</h4>
     <% @upcoming.each do |event| %>
-      <div class="border border-info pb-3">
+      <div class="border border-info pb-2">
         <h5 class="mt-3 text-center"><%= event.title%></h5>
         <p class="mt-3 text-center"><%= event.description%></p>
         <p class="mt-3 text-center"><%= event.date%></p>
-        <%= link_to 'Show', event, class:"ms-5 me-4" %>
-        <%= link_to 'Edit', edit_event_path(event), class:"mx-4" %>
-        <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'No kidding?' }, class:"mx-4" %>
+        <p class="text-center"><%= link_to 'Show', event%></p>
       </div>
     <%end%>
       <h4 class="my-3 text-center">Past events</h4>
       <% @past.each do |event| %>
-        <div class="border border-info pb-3">
+        <div class="border border-info pb-2">
           <h5 class="mt-3 text-center"><%= event.title%></h5>
           <p class="mt-3 text-center"><%= event.description%></p>
           <p class="mt-3 text-center"><%= event.date%></p>
-          <%= link_to 'Show', event, class:"ms-5 me-4" %>
-          <%= link_to 'Edit', edit_event_path(event), class:"mx-4" %>
-          <%= link_to 'Destroy', event, method: :delete, data: { confirm: 'No kidding?' }, class:"mx-4" %>
+          <p class="text-center"><%= link_to 'Show', event%></p>
         </div>              
       <% end %>
   </div>  

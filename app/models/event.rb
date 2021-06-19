@@ -5,7 +5,7 @@ class Event < ApplicationRecord
   has_many :attendees, through: :attendances, source: :attendee
 
   scope :upcoming, -> { where('Date >= ?', Time.now).order('Date ASC') }
-  scope :past, -> { where('Date >= ?', Time.now).order('Date DESC') }
+  scope :past, -> { where('Date < ?', Time.now).order('Date DESC') }
 
   validates :title, :description, :date, presence: true
 end
